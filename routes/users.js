@@ -10,7 +10,7 @@ router.get('/sign-in', userController.signIn);
 
 router.post('/create', userController.create)
 router.get('/sign-out', userController.destroySession)
-
+router.post('/update/:id', passport.checkAuthentication, userController.update)
 
 router.post('/create-session', passport.authenticate(
     'local',
