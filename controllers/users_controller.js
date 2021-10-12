@@ -32,7 +32,6 @@ module.exports.signIn = function(req, res){
 }
 
 module.exports.create = function(req, res){
-    // TODO
     if(req.body.password!=req.body.confirm_password){
         return res.redirect('back');
     }
