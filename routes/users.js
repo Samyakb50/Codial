@@ -11,6 +11,8 @@ router.get('/sign-in', userController.signIn);
 router.post('/create', userController.create)
 router.get('/sign-out', userController.destroySession)
 router.post('/update/:id', passport.checkAuthentication, userController.update)
+router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}))
+router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in'}), userController.createSession)
 
 router.post('/create-session', passport.authenticate(
     'local',
