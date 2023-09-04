@@ -16,7 +16,11 @@ exports.newComment = (comment) => {
             return;
         }
 
+<<<<<<< HEAD
         console.log('Message sent', info);
+=======
+        // console.log('Message sent', info);
+>>>>>>> 73b231f7c64fc8a096c073b8f550afad12b39145
         return;
     });
 }

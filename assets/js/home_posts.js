@@ -40,6 +40,7 @@
 
     // method to create a post in DOM
     let newPostDom = function(post){
+        // CHANGE :: show the count of zero likes on this post
         return $(`<li id="post-${post._id}">
                     <p>
                         

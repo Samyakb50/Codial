@@ -58,7 +58,12 @@ class PostComments{
 
 
     newCommentDom(comment){
+<<<<<<< HEAD
         // I've added a class 'delete-comment-button' to the delete comment link and also id to the comment's li
+=======
+        // CHANGE :: show the count of zero likes on this comment
+
+>>>>>>> 73b231f7c64fc8a096c073b8f550afad12b39145
         return $(`<li id="comment-${ comment._id }">
                         <p>
                             

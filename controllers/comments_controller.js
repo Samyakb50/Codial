@@ -1,6 +1,11 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
 const commentsMailer = require('../mailers/comments_mailer');
+<<<<<<< HEAD
+=======
+const commentEmailWorker = require('../workers/comment_email_worker');
+const Like = require('../models/like');
+>>>>>>> 73b231f7c64fc8a096c073b8f550afad12b39145
 module.exports.create = async function(req, res){
 
     try{
@@ -54,6 +59,13 @@ module.exports.destroy = async function(req, res){
             comment.remove();
 
             let post = Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}});
+<<<<<<< HEAD
+=======
+
+            // CHANGE :: destroy the associated likes for this comment
+            await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
+
+>>>>>>> 73b231f7c64fc8a096c073b8f550afad12b39145
 
             // send the comment id which was deleted back to the views
             if (req.xhr){

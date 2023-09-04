@@ -6,7 +6,11 @@ const User = require('../models/user');
 module.exports.home = async function(req, res){
 
     try{
+<<<<<<< HEAD
          // populate the user of each post
+=======
+        // CHANGE :: populate the likes of each post and comment
+>>>>>>> 73b231f7c64fc8a096c073b8f550afad12b39145
         let posts = await Post.find({})
         .sort('-createdAt')
         .populate('user')
