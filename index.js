@@ -8,20 +8,22 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
-const passportJWT = require('./config/passport-jwt-strategy')
-const passportGoogle = require('./config/passport-google-oauth2-strategy')
-const MongoStore = require('connect-mongo');
-const sassMiddleware = require('node-sass-middleware')
-const flash = require('connect-flash');
-const customMware = require('./config/middleware')
+const passportJWT = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 
-app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
-    debug: true,
-    outputStyle: 'extended',
-    prefix: '/css'
-}));
+const MongoStore = require('connect-mongo')(session);
+// const sassMiddleware = require('node-sass-middleware');
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
+
+
+// app.use(sassMiddleware({
+//     src: './assets/scss',
+//     dest: './assets/css',
+//     debug: true,
+//     outputStyle: 'extended',
+//     prefix: '/css'
+// }));
 app.use(express.urlencoded());
 
 app.use(cookieParser());
@@ -52,24 +54,25 @@ app.use(session({
     cookie: {
         maxAge: (1000 * 60 * 100)
     },
-    store: MongoStore.create(
+    store: new MongoStore(
         {
-            mongoUrl: 'mongodb://localhost/codeial_development',
+            mongooseConnection: db,
             autoRemove: 'disabled'
+        
         },
         function(err){
-            console.log(err || 'connect-mongo setup ok');
-        })
+            console.log(err ||  'connect-mongodb setup ok');
+        }
+    )
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.unsubscribe(passport.setAuthenticatedUser);
 
 app.use(passport.setAuthenticatedUser);
 
 app.use(flash());
-app.use(customMware.setFlash)
+app.use(customMware.setFlash);
 
 // use express router
 app.use('/', require('./routes'));
