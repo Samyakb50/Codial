@@ -1,18 +1,17 @@
-//require library
 const mongoose = require('mongoose');
+const env = require('./environment');
 
-// connect to database
-mongoose.connect('mongodb://localhost/codial_development');
+mongoose.connect(`mongodb://127.0.0.1:27017/${env.db}`);
 
-//acquire the connection (if is successfull)
+
 const db = mongoose.connection;
 
-//error
-db.on('err', console.error.bind(console, 'error connecting to db'));
+db.on('error', console.error.bind(console, "Error connecting to MongoDB"));
 
-//up and running then print the message
+
 db.once('open', function(){
-    console.log('successfully connected to databse')
+    console.log('Connected to Database :: MongoDB');
 });
+
 
 module.exports = db;
