@@ -6,16 +6,17 @@ const env = require('./environment');
 
 //tell passport to use new strategy for google login
 passport.use(new googleStrategy({
-    clientID: "974244660273-djpn0m0j42n6ahso2crjj8t8on5s9a90.apps.googleusercontent.com",
-    clientSecret: "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",
-    callbackURL: "http://localhost:8000/users/auth/google/callback",
-},
-function(accessToken, refreshToken, profile, done){
-    // find a user
-    User.findOne({email: profile.emails[0].value}).exec(function(err, user){
-        if (err){console.log('error in google strategy-passport', err); return;}
-        console.log(accessToken, refreshToken);
-        console.log(profile);
+        clientID: env.google_client_id,
+        clientSecret: env.google_client_secret,
+        callbackURL: env.google_call_back_url,
+    },
+
+    function(accessToken, refreshToken, profile, done){
+        // find a user
+        User.findOne({email: profile.emails[0].value}).exec(function(err, user){
+            if (err){console.log('error in google strategy-passport', err); return;}
+            console.log(accessToken, refreshToken);
+            console.log(profile);
 
             if (user){
                 // if found, set this user as req.user
