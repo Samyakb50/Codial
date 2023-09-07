@@ -6,8 +6,8 @@ const env = require('./environment');
 
 //tell passport to use new strategy for google login
 passport.use(new googleStrategy({
-    clientID: "888484037241-muusj7akmn915gfd19b0cjtf3470ltqk.apps.googleusercontent.com",
-    clientSecret: "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",
+    clientID: "974244660273-djpn0m0j42n6ahso2crjj8t8on5s9a90.apps.googleusercontent.com",
+    clientSecret: "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",
     callbackURL: "http://localhost:8000/users/auth/google/callback",
 },
 function(accessToken, refreshToken, profile, done){
