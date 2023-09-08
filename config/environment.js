@@ -18,7 +18,7 @@ const development = {
     },
     google_client_id: "974244660273-djpn0m0j42n6ahso2crjj8t8on5s9a90.apps.googleusercontent.com",
     google_client_secret: "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",
-    google_call_back_url: "http://codeial.live/users/auth/google/callback",
+    google_call_back_url: "http://localhost:8000/users/auth/google/callback",
     jwt_secret: 'codeial'
 }
 
