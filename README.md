@@ -60,7 +60,7 @@ This is a social media-like application built using Node.js, Express.js, EJS for
 - **Deployment:**
   - The app is live on render.com
   - Domain setup and HTTPS for secure communication.
-  - Deployed link :- https://codeial-gu73.onrender.com
+  - Deployed link :- http://codeial.live/
 
 - **Testing:**
   - Unit tests and integration tests for critical parts of the application.
@@ -78,7 +78,7 @@ This is a social media-like application built using Node.js, Express.js, EJS for
 1. Clone this repository to your local machine.
 
    ```shell
-   git clone https://github.com/yourusername/social-media-app.git
+   git clone https://github.com/yourusername/codeial.git
    
 2. npm install
 
