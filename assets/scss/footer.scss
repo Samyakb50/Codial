@@ -1,18 +1,17 @@
-#layout-footer{
+#footer{
+    height:30px;
+    padding-top: 15px;
+    background-color: black;
     color: white;
-    a{
-        color: white;
-        text-decoration: none;
-    }
+    text-align: center;
 
-    background: grey;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: flex-start;
+    span{
 
-    .footer-nav{
-        ul{
-            list-style: none;
+        a{
+            color: rgb(54, 240, 253);
+            text-decoration: none;
+            margin: 5px;
         }
+
     }
 }

@@ -1,11 +1,13 @@
-#layout-footer {
+#footer {
+  height: 30px;
+  padding-top: 15px;
+  background-color: black;
   color: white;
-  background: grey;
-  padding: 5px 10px;
-  display: flex;
-  justify-content: flex-start; }
-  #layout-footer a {
-    color: white;
-    text-decoration: none; }
-  #layout-footer .footer-nav ul {
-    list-style: none; }
+  text-align: center;
+}
+
+#footer span a {
+  color: #36f0fd;
+  text-decoration: none;
+  margin: 5px;
+}
