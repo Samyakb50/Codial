@@ -60,7 +60,6 @@ This is a social media-like application built using Node.js, Express.js, EJS for
 - **Deployment:**
   - The app is live on render.com
   - Domain setup and HTTPS for secure communication.
-  - Deployed link :- http://codeial.live/
 
 - **Testing:**
   - Unit tests and integration tests for critical parts of the application.
