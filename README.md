@@ -58,8 +58,8 @@ This is a social media-like application built using Node.js, Express.js, EJS for
   - Graceful error handling with user-friendly error messages.
 
 - **Deployment:**
-  - The app is live on render.com
-  - Domain setup and HTTPS for secure communication.
+  - The app is live on godday.com
+  - Domain setup and HTTP for secure communication.
 
 - **Testing:**
   - Unit tests and integration tests for critical parts of the application.
