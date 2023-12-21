@@ -32,10 +32,6 @@ This is a social media-like application built using Node.js, Express.js, EJS for
   - Users can view a news feed with posts from their friends or connections.
   - Posts are displayed in chronological order.
 
-- **Notifications:**
-  - Send notifications for new comments on email.
-  - Receives notifications on performing any activity on the application using Noty.js.
-
 - **Security:**
   - Authentication middleware protects routes.
   - Secure user sessions.
